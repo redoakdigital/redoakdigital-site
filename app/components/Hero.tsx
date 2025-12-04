@@ -1,31 +1,31 @@
 'use client'
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Sphere, Stars } from '@react-three/drei'
 import { motion } from 'framer-motion'
-
-function RedEye() {
-  return (
-    <>
-      <ambientLight intensity={0.4} />
-      <pointLight position={[0,0,0]} intensity={3} color="#ef4444" />
-      <Sphere args={[1.5, 64, 64]}><meshStandardMaterial emissive="#ef4444" emissiveIntensity={4} /></Sphere>
-      <Sphere args={[0.7, 64, 64]} position={[0,0,1.2]}><meshStandardMaterial emissive="#dc2626" emissiveIntensity={6} /></Sphere>
-    </>
-  )
-}
 
 export default function Hero() {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      <Canvas className="absolute inset-0">
-        <Stars radius={300} depth={50} count={5000} factor={7} saturation={0} fade />
-        <RedEye />
-        <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
-      </Canvas>
-      <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="relative z-10 text-center">
-        <h1 className="text-6xl md:text-8xl font-display bg-gradient-to-r from-primary-500 to-red-600 bg-clip-text text-transparent">Red Oak Digital</h1>
-        <p className="text-2xl md:text-4xl mt-6 text-gray-300">Accelerating Tomorrow’s Tech Today</p>
-        <p className="text-lg mt-4 text-gray-500">Since 2023</p>
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-red-900">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="text-center px-6"
+      >
+        <motion.h1 
+          animate={{ scale: [1, 1.05, 1] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="text-6xl md:text-8xl font-display bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent mb-4"
+        >
+          Red Oak Digital
+        </motion.h1>
+        <motion.p 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="text-xl md:text-3xl text-gray-300 mb-4"
+        >
+          Accelerating Tomorrow’s Tech Today
+        </motion.p>
+        <motion.p className="text-lg text-gray-500">Since 2023</motion.p>
       </motion.div>
     </section>
   )
