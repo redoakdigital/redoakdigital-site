@@ -1,0 +1,32 @@
+{
+  "name": "redoakdigital-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "15.0.0-rc.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "framer-motion": "^11.5.4",
+    "three": "^0.168.0",
+    "@react-three/fiber": "^8.17.5",
+    "@react-three/drei": "^9.112.1",
+    "resend": "^4.0.0",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^15.0.0-rc.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "tailwindcss": "^3.4.10",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47"
+  }
+}
