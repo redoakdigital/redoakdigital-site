@@ -4,9 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Red Oak Digital</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #0a0a0a;
@@ -19,10 +16,22 @@
       --gradient: linear-gradient(135deg, var(--red), var(--red-dark));
     }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; line-height:1.7; overflow-x:hidden; }
-    h1,h2,h3 { font-family:'Montserrat',sans-serif; font-weight:900; letter-spacing:-0.02em; }
 
-    /* HEADER – top-left with perfectly framed white lines */
+    /* BOLD MONOSPACE DIGITAL FONT EVERYWHERE */
+    body {
+      background:var(--bg);
+      color:var(--text);
+      font-family: 'Courier New', 'Courier', monospace;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      line-height: 1.7;
+      overflow-x:hidden;
+    }
+    h1,h2,h3,p,a,button,input,textarea,label,span,nav,footer {
+      font-family: 'Courier New', 'Courier', monospace !important;
+      font-weight: 700 !important;
+    }
+
     header {
       position:fixed;
       top:0; left:0; right:0;
@@ -43,7 +52,6 @@
       align-items:center;
       gap:0.7rem;
       font-size:0.84rem;
-      font-weight:900;
       color:white;
       height:100%;
     }
@@ -51,14 +59,12 @@
     .header-brand::after {
       content:'';
       position:absolute;
-      left:2rem;
-      right:2rem;
+      left:2rem; right:2rem;
       height:1px;
       background:#ffffff;
     }
-    .header-brand::before { top:9px; }   /* perfect centering */
+    .header-brand::before { top:9px; }
     .header-brand::after  { bottom:9px; }
-
     .header-brand svg { width:27px; height:27px; }
 
     nav {
@@ -71,7 +77,6 @@
     nav a {
       color:var(--text-muted);
       text-decoration:none;
-      font-weight:400;
       font-size:0.95rem;
       position:relative;
       transition:color .3s;
@@ -82,7 +87,6 @@
     .hamburger { display:none; position:absolute; left:2rem; flex-direction:column; gap:3px; cursor:pointer; }
     .hamburger span { width:20px; height:2px; background:#fff; }
 
-    /* Large logo – bottom-right in every section */
     .section-logo {
       position:absolute;
       bottom:4rem;
@@ -132,7 +136,7 @@
     .intro { display:grid; grid-template-columns:2fr 1fr; gap:4rem; align-items:start; margin-bottom:4rem; }
     .intro-text p { margin-bottom:1.5rem; color:var(--text); opacity:0.9; font-size:1.05rem; line-height:1.8; }
     .accent-box { background:var(--card); padding:2rem; border:1px solid var(--border); border-radius:8px; height:fit-content; position:sticky; top:2rem; }
-    .accent-box h3 { font-size:1.4rem; margin-bottom:1rem; color:var(--red); font-weight:700; }
+    .accent-box h3 { font-size:1.4rem; margin-bottom:1rem; color:var(--red); }
     .accent-box p { color:var(--text-muted); font-size:0.95rem; line-height:1.6; }
 
     .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:1.5rem; }
@@ -142,71 +146,25 @@
     .card p { color:var(--text-muted); font-size:0.9rem; line-height:1.5; }
 
     .insights-content { text-align:center; max-width:700px; margin:0 auto; }
-    .insights-link { display:inline-block; padding:1rem 2.5rem; background:var(--card); color:var(--text); border:1px solid var(--border); border-radius:6px; font-weight:500; font-size:1rem; text-decoration:none; transition:all 0.3s; }
+    .insights-link { display:inline-block; padding:1rem 2.5rem; background:var(--card); color:var(--text); border:1px solid var(--border); border-radius:6px; font-weight:700; font-size:1rem; text-decoration:none; transition:all 0.3s; }
     .insights-link:hover { border-color:var(--red); background:var(--gradient); color:var(--bg); }
 
-    /* YOUR FAVORITE ULTRA-CLEAN CONTACT FORM */
-    .contact-content {
-      max-width:500px;
-      margin:0 auto;
-      display:flex;
-      flex-direction:column;
-      gap:1.5rem;
-    }
-    .contact-content label {
-      display:block;
-      margin-bottom:0.5rem;
-      color:var(--text);
-      font-weight:500;
-      letter-spacing:0.02em;
-    }
+    .contact-content { max-width:500px; margin:0 auto; display:flex; flex-direction:column; gap:1.5rem; }
+    .contact-content label { display:block; margin-bottom:0.5rem; color:var(--text); font-weight:700; letter-spacing:0.02em; }
     .contact-content input,
     .contact-content textarea,
-    .contact-content input[type="file"] {
-      width:100%;
-      padding:1rem;
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:0;
-      color:var(--text);
-      font-family:inherit;
-      font-size:1rem;
-      outline:none;
-      transition:border-color 0.2s;
-    }
+    .contact-content input[type="file"] { padding:1rem; background:var(--card); border:1px solid var(--border); border-radius:0; color:var(--text); font-size:1rem; outline:none; transition:border-color 0.2s; }
     .contact-content input:focus,
     .contact-content textarea:focus { border-color:var(--red); }
-    .contact-content input[type="file"] { padding:0.75rem; background:transparent; border:1px solid var(--border); }
-    .contact-content input[type="file"]::-webkit-file-upload-button {
-      background:var(--red);
-      color:var(--text);
-      border:none;
-      padding:0.5rem 1rem;
-      margin-right:1rem;
-      cursor:pointer;
-      border-radius:0;
-    }
-    .contact-content textarea { resize:vertical; min-height:120px; border-radius:0; }
-    .contact-content button {
-      padding:1.25rem;
-      background:var(--gradient);
-      color:var(--bg);
-      border:none;
-      border-radius:0;
-      font-weight:700;
-      font-size:1rem;
-      cursor:pointer;
-      text-transform:uppercase;
-      letter-spacing:0.05em;
-      transition:background 0.2s;
-    }
-    .contact-content button:hover {
-      background:linear-gradient(135deg,var(--red-dark),var(--red));
-    }
+    .contact-content input[type="file"] { padding:0.75rem; background:transparent; }
+    .contact-content input[type="file"]::-webkit-file-upload-button { background:var(--red); color:var(--text); border:none; padding:0.5rem 1rem; margin-right:1rem; cursor:pointer; }
+    .contact-content textarea { resize:vertical; min-height:120px; }
+    .contact-content button { padding:1.25rem; background:var(--gradient); color:var(--bg); border:none; border-radius:0; font-weight:700; font-size:1rem; cursor:pointer; text-transform:uppercase; letter-spacing:0.05em; transition:background 0.2s; }
+    .contact-content button:hover { background:linear-gradient(135deg,var(--red-dark),var(--red)); }
     .email-link { text-align:center; margin-top:2rem; color:var(--text-muted); font-size:0.95rem; }
     .email-link a { color:var(--red); text-decoration:none; }
 
-    footer { padding:4rem 2rem 2rem; text-align:center; color:var(--text-muted); border-top:1px solid var(--border); font-size:0.9rem; font-weight:300; letter-spacing:0.05em; }
+    footer { padding:4rem 2rem 2rem; text-align:center; color:var(--text-muted); border-top:1px solid var(--border); font-size:0.9rem; font-weight:700; letter-spacing:0.05em; }
 
     @media (max-width:768px) {
       header { height:70px; }
@@ -233,7 +191,6 @@
       </svg>
       <span>Red Oak Digital</span>
     </div>
-
     <nav id="nav">
       <a href="#about">About</a>
       <a href="#focus">Focus</a>
@@ -242,14 +199,12 @@
       <a href="#insights">Insights</a>
       <a href="#contact">Contact</a>
     </nav>
-
     <div class="hamburger" id="hamburger">
       <span></span><span></span><span></span>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero">
       <h1>Red Oak Digital</h1>
       <p>Technology research accelerating robotics, energy infrastructure, and high-conviction digital assets.</p>
@@ -263,7 +218,6 @@
       </div>
     </section>
 
-    <!-- ALL 6 SECTIONS – complete with bottom-right logo -->
     <section class="section" id="about">
       <div class="section-logo">
         <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:#ef4444;stroke-width:3;">
@@ -350,7 +304,6 @@
       </div>
     </section>
 
-    <!-- CONTACT – your favorite clean version, fully stacked -->
     <section class="section" id="contact">
       <div class="section-logo">
         <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:#ef4444;stroke-width:3;">
@@ -364,19 +317,14 @@
         <form action="https://formspree.io/f/your-form-id" method="POST" enctype="multipart/form-data">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Your Name" required />
-
           <label for="email">Email</label>
           <input type="email" id="email" name="email" placeholder="Your Email" required />
-
           <label for="document">Document (Optional)</label>
           <input type="file" id="document" name="document" accept=".pdf,.doc,.docx" />
-
           <label for="message">Message</label>
           <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-
           <button type="submit">Send</button>
         </form>
-
         <div class="email-link">
           Or reach us directly at <a href="mailto:contact@redoakdigital.xyz">contact@redoakdigital.xyz</a>
         </div>
